@@ -33,5 +33,5 @@ while True:
             for i in range(4):
              sorteio = choices(fruit_list)
              sorteio_list.append([fruit_list])
-            
+    
         print(sorteio)
