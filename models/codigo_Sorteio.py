@@ -8,9 +8,6 @@ saldo = float(input("Digite o valor que deseja depositar: "))
 aposta = float(input("Digite o valor da sua aposta: "))
 
 
-
-
-
 #print(sorteio_list)
 
 #def inserir_deposito():
