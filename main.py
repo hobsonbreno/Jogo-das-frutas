@@ -14,3 +14,8 @@ with st.form(key="include_cliente"):
         st.write(f'Seu deposito foi:{input_deposito}','reais')
         st.write(f'Sua aposta foi:{input_aposta}','reais')
         st.write(f'{input_aposta + input_deposito }')
+        st.write(f'{input_aposta - input_deposito }')
+        st.write(f'{input_aposta * input_deposito }')
+        st.write(f'{input_aposta / input_deposito }')
+        st.write(f'{input_aposta % input_deposito }')
+        
