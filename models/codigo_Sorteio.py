@@ -3,17 +3,29 @@ import random
 frutas = ['Laranja', 'Limão', 'Manga', 'Banana','Melão', 'Abacate', 'Uva', 'Maçã', 'Pitomba','Acerola', 'Goiaba' ,'Siriguela']
 lista_sorteio = []
 
-def validar_deposito(deposito):
-    if deposito.isnumeric(): 
-        return True
-    else:
-        return False   
-
-def validar_aposta(aposta):
-    if aposta.isnumeric():
-        return True
-    else:
+#def validar_deposito(deposito):
+    #if deposito.isdecimal(): 
+        #return True
+    #else:
+        #return False   
+def deposito_isnumber(deposito):
+    try:
+        float(deposito)
+    except ValueError:
         return False
+    return True
+
+#def validar_aposta(aposta):
+    #if aposta.isdecimal():
+        #return True
+    #else:
+        #return False
+def aposta_isnumber(aposta):
+    try:
+        float(aposta)
+    except ValueError:
+        return False
+    return True        
 
 def verificar_aposta(aposta,deposito):
     aposta = float(aposta)
@@ -26,33 +38,35 @@ def verificar_aposta(aposta,deposito):
 
 # codigo 
 nome_jogador = input('digite seu nome:')
-deposito = input('digite o deposito:')
+deposito = input('digite o valor do deposito:')
 saldo = deposito
 
-while validar_deposito(deposito) is False:
-    print('Opa... Não consigo reconhecer o valor depositado. Por-favor deposite novamente.')
-    deposito = input('digite o deposito do saldo:')
-
+while deposito_isnumber(deposito) is False:
+    print('\neii sibite baleado aqui só aceita números seu lezado !!!')
+    deposito = input('digite o deposite o valor do deposito:')
 aposta = input('digite o valor da aposta: ')
 
-while validar_aposta(aposta) is False:
-    print('Opa... Não consigo reconhecer o valor da aposta. Por-favor aposte novamente.')
+while aposta_isnumber(aposta) is False:
+    print('\neii fi da chupi-chupi é pra digitar números !!!')
     aposta = input('digite o valor da aposta: ')
 
 while verificar_aposta(aposta,deposito) is False:
-    print('O saldo é insuficiente para esse valor de aposta.')
-    deposito = input('digite o deposito do saldo:')
+    print('diabéisso macho, deixa de ser lizeira deposita mais')
+    deposito = input('digite o valor do deposito: ')
 
 
-print('iniciar jogo')
+#print('iniciar jogo')
 
-saldo = float(saldo)
+deposito = float(deposito)
 aposta = float(aposta)
+saldo = float(saldo)
 
 for i in range(4):
         sorteio = random.choice(frutas)
         lista_sorteio.append(sorteio)
+
 print(lista_sorteio)
+
 if lista_sorteio[0] == lista_sorteio[1] and lista_sorteio[2] == lista_sorteio[3]:
     saldo += aposta * 10
     print('aposta * 10 ',saldo)
@@ -61,8 +75,8 @@ elif lista_sorteio[0] == lista_sorteio[1] or lista_sorteio[2] == lista_sorteio[3
     saldo += aposta * 5 
     print('aposta * 5',saldo)
 elif lista_sorteio[0] != lista_sorteio[1] and lista_sorteio[2] != lista_sorteio[3]:
-    saldo = aposta
-    print('errou todas',saldo)
+    saldo = aposta + saldo
+    print('\nvixi mah nem deu, só sobrou o buraco e a catinga',saldo)
 else:
     saldo -= aposta
     print(saldo)
