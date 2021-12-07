@@ -39,7 +39,12 @@ def verificar_aposta(aposta,deposito):
 # codigo 
 nome_jogador = input('digite seu nome:')
 deposito = input('digite o valor do deposito:')
-saldo = deposito
+saldo = ''
+
+deposito = float(deposito)
+
+
+
 
 while deposito_isnumber(deposito) is False:
     print('\neii sibite baleado aqui só aceita números seu lezado !!!')
@@ -57,9 +62,9 @@ while verificar_aposta(aposta,deposito) is False:
 
 #print('iniciar jogo')
 
-deposito = float(deposito)
+
 aposta = float(aposta)
-saldo = float(saldo)
+
 
 for i in range(4):
         sorteio = random.choice(frutas)
