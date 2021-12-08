@@ -57,7 +57,7 @@ while verificar_aposta(aposta,deposito) is False:
     deposito = input('digite o valor do deposito: ')
 
 
-#print('iniciar jogo')
+
 
 
 aposta = float(aposta)
