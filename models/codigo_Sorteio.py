@@ -3,11 +3,7 @@ import random
 frutas = ['Laranja', 'Limão', 'Manga', 'Banana','Melão', 'Abacate', 'Uva', 'Maçã', 'Pitomba','Acerola', 'Goiaba' ,'Siriguela']
 lista_sorteio = []
 
-#def validar_deposito(deposito):
-    #if deposito.isdecimal(): 
-        #return True
-    #else:
-        #return False   
+ 
 def deposito_isnumber(deposito):
     try:
         float(deposito)
@@ -15,11 +11,7 @@ def deposito_isnumber(deposito):
         return False
     return True
 
-#def validar_aposta(aposta):
-    #if aposta.isdecimal():
-        #return True
-    #else:
-        #return False
+
 def aposta_isnumber(aposta):
     try:
         float(aposta)
@@ -39,24 +31,29 @@ def verificar_aposta(aposta,deposito):
 # codigo 
 nome_jogador = input('digite seu nome:')
 deposito = input('digite o valor do deposito:')
-saldo = ''
+deposito = deposito.replace(',','.')
+saldo = deposito
 
 deposito = float(deposito)
-
+saldo = float(saldo)
 
 
 
 while deposito_isnumber(deposito) is False:
     print('\neii sibite baleado aqui só aceita números seu lezado !!!')
     deposito = input('digite o deposite o valor do deposito:')
+    deposito = deposito.replace(',','.')
 aposta = input('digite o valor da aposta: ')
 
 while aposta_isnumber(aposta) is False:
     print('\neii fi da chupi-chupi é pra digitar números !!!')
     aposta = input('digite o valor da aposta: ')
+    aposta = aposta.replace(',','.')
 
 while verificar_aposta(aposta,deposito) is False:
     print('diabéisso macho, deixa de ser lizeira deposita mais')
+    print('O seu saldo: R${:.2f}'.format(saldo))
+    print('O seu aposta: R${:.2f}'.format(aposta))
     deposito = input('digite o valor do deposito: ')
 
 
