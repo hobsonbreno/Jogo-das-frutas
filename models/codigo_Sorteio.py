@@ -66,8 +66,6 @@ while verificar_aposta(aposta,deposito) is False:
     saldo = deposito + saldo
 
 
-
-
 for i in range(4):   
         sorteio = random.choice(frutas)
         lista_sorteio.append(sorteio)
